@@ -5,6 +5,7 @@
  * Output properly (bits)
  */
 
+#include <bitset>
 #include <cassert>
 #include <fstream>
 #include <iostream>
@@ -85,22 +86,18 @@ int main() {
     encode(top, "", code);
 
     file.close();
-    std::ofstream output("./compressedText.txt",
-                         std::ios::out | std::ios::binary);
+    std::ofstream output("./compressedText.txt", std::ios::binary);
     // Now We can Write the Encoded text
     std::ifstream f2("./text.txt");
-    std::string test;
     ch = {};
     if (f2.is_open() && output.is_open()) {
-        std::cout << "Both Open " << std::endl;
         while (f2.get(ch)) {
             std::cout << "Character : " << ch << std::endl;
-            test += code[ch];
-            output << code[ch];
+            // output.put(code[ch]);
+            output << std::bitset<8>(code[ch]);
         }
         std::cout << "Closing " << std::endl;
         output.close();
     }
-    std::cout << "Size of String: " << test.size() << std::endl;
 }
 
