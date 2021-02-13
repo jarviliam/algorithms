@@ -9,6 +9,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"sort"
 	"strconv"
 	"strings"
 )
@@ -34,7 +35,6 @@ func load(in string) ([]int, []int, error) {
 	var input []int
 	scanner := bufio.NewScanner(file)
 	scanner.Scan()
-	//fmt.Println(scanner.Text())
 	scanner.Scan()
 	temp := strings.Split(scanner.Text(), " ")
 	converted, _ := sliceAtoi(temp)
@@ -45,6 +45,9 @@ func load(in string) ([]int, []int, error) {
 		v, _ := strconv.Atoi(strings.Split(scanner.Text(), " ")[0])
 		input = append(input, v)
 	}
+	sort.Slice(converted, func(i, j int) bool {
+		return converted[i] < converted[j]
+	})
 	return input, converted, scanner.Err()
 }
 func binarySearch(values []int, target int, lowIdx int, highIdx int) int {
@@ -52,12 +55,13 @@ func binarySearch(values []int, target int, lowIdx int, highIdx int) int {
 		return -1
 	}
 	middle := (highIdx + lowIdx) / 2
+	fmt.Println("Target %d - Middle %d - Midldle Vaue%d", target, middle, values[middle])
 	if values[middle] > target {
 		return binarySearch(values, target, lowIdx, middle-1)
-	} else if values[middle] < target {
+	} else if (values[middle] < target) && middle != len(values)-1 {
 		return binarySearch(values, target, middle+1, highIdx)
 	} else {
-		return middle
+		return middle + 1
 	}
 }
 
