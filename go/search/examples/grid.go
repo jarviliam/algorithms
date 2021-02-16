@@ -1,8 +1,8 @@
 /*
-    https://www.hackerrank.com/challenges/gridland-metro/problem
-    Difficulty - Medium (Although it really isnt)
-    2021-02-16
-    Time: 5 mins
+   https://www.hackerrank.com/challenges/gridland-metro/problem
+   Difficulty - Medium (Although it really isnt)
+   2021-02-16
+   Time: 5 mins
 */
 package main
 
@@ -59,11 +59,40 @@ func load(path string) (*ProblemSet, error) {
 	return &ProblemSet{size, tracks}, nil
 }
 
+type Pair struct {
+	start, end int
+}
+
+func overlappingCase(problem *ProblemSet) int {
+	size := problem.size
+	queue := make(map[int]Pair)
+	for _, v := range problem.tracks {
+		if value, ok := queue[v.row]; ok {
+			if value.start > v.start {
+				queue[v.row] = Pair{v.start, value.end}
+			}
+			if value.end < v.end {
+				queue[v.row] = Pair{value.start, v.end}
+			}
+		} else {
+			queue[v.row] = Pair{v.start, v.end}
+		}
+	}
+	//Calculate
+	for _, v := range queue {
+		size -= v.end - v.start + 1
+	}
+	return size
+}
+
 func main() {
 	fmt.Println("Lets go")
 	problemSet, _ := load("grid.txt")
+	//This is If We Do Not Account for Overlapping Rows
 	for _, v := range problemSet.tracks {
 		problemSet.size -= (v.end - v.start) + 1
 	}
 	fmt.Println(problemSet.size)
+	//This is For the Overlapping rows
+	fmt.Println(overlappingCase(problemSet))
 }
