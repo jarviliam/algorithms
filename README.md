@@ -1,13 +1,12 @@
-#General Algorithms
+# General Algorithms
 Various Algorithms.
 
-
-##Sorting
+## Sorting
 | Algorithm     | Language |
 |---------------|----------|
 | Binary Search | [Go]()   |
 
-##Trees
+## Trees
 
 | Algorithm     | Language |
 |---------------|----------|
@@ -22,3 +21,17 @@ Various Algorithms.
 
 Various Solutions to HackerRank Problems in various languages.
 This is primarily just to work on my problem solving intutition.
+
+### Search Algorithms
+| Challenge | Language | Difficulty |
+| --------- | --------- | --------- |
+| Gridland Metro | [Go]() | Medium |
+| IceCream Parlor | [Go]() | Easy |
+
+
+### Implementation
+
+| Challenge | Language | Difficulty |
+| --------- | --------- | --------- |
+| Queen's Attack 2 | [Go]() | Medium |
+| Climbing the LeaderBoard | [Go]() | Medium |
