@@ -33,5 +33,6 @@ This is primarily just to work on my problem solving intutition.
 
 | Challenge | Language | Difficulty |
 | --------- | --------- | --------- |
+| Extra Long Factorials | [Go]() | Medium |
 | Queen's Attack 2 | [Go]() | Medium |
 | Climbing the LeaderBoard | [Go]() | Medium |
