@@ -1,3 +1,12 @@
+/**
+* Day 0: Weighted Mean
+* @url - https://www.hackerrank.com/challenges/s10-weighted-mean/problem
+* Difficulty - Easy
+* Time : 1 min
+* Explanation :
+*
+ */
+
 package main
 
 import (

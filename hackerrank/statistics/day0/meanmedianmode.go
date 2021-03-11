@@ -1,3 +1,12 @@
+/**
+* Day 0: Mean, Median, and Mode
+* @url - https://www.hackerrank.com/challenges/s10-basic-statistics/problem
+* Difficulty - Easy
+* Time : 3 mins
+* Explanation :
+*
+ */
+
 package main
 
 import (
