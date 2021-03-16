@@ -5,6 +5,7 @@ Various Algorithms.
 | Algorithm     | Language |
 |---------------|----------|
 | Binary Search | [Go]()   |
+| Merge Sort| [Go]()   |
 
 ## Trees
 
@@ -37,3 +38,11 @@ This is primarily just to work on my problem solving intutition.
 | Queen's Attack 2 | [Go]() | Medium |
 | Climbing the LeaderBoard | [Go]() | Medium |
 | Non Divisible Subset| [Go]() | Medium |
+| Extra Long Factorials| [Go]() | Medium |
+
+### Statistics
+
+| Challenge | Language | Difficulty |
+| --------- | --------- | --------- |
+| Day 0 - Mean,Median,Mode | [Go]() | Easy |
+| Day 0 - Weighted Mean| [Go]() | Easy |
